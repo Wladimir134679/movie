@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Movie</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+    <div th:include="fragments :: header"></div>
+
+    <table id="main-block">
+        <tr>
+            <td>
+                <h2>Список новых фильмов</h2>
+                <div id="list-table">
+                    <th:block th:each="data : ${moviesList}">
+                        <div class="movie">
+                            <p class="name">Название: <span th:text="*{data.getName()}"></span></p>
+                            <p class="description" th:text="*{data.getDescription()}"></p>
+                            <div class="info">
+                                Комментарев: <span th:text="*{data.getNumComments()}"></span>
+                                |
+                                Средний рейтинг: <span th:text="*{data.getAssessment()}"></span>
+                            </div>
+                            <div class="button">
+                                <a th:href="@{/movie/show?id=}+*{data.getId()}">Открыть</a>
+                            </div>
+                        </div>
+                    </th:block>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div th:include="fragments :: footer"></div>
+</body>
+</html>

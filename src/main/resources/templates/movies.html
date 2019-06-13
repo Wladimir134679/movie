@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Все фильмы</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td colspan="99">
+            <div>
+                <h2>
+                    Все фильмы
+                </h2>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="99">
+            <div class="pages">
+                <span>Страница: </span><a  th:class="((${page} + 1) == *{i}) ? 'lis' : ''" th:each="i : ${listPages}" th:href="@{/movies?page=} + *{i}" th:text="*{i}"></a>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div th:if="${moviesList} != null" th:insert="index :: #list-table">
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Поиск</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td>
+            <h2>Регистрация</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="reg">
+                <form th:object="${userForm}" th:action="@{/reg}" method="POST">
+                    <table>
+                        <tr>
+                            <th>
+                                Ник:
+                            </th>
+                            <td>
+                                <input type="text" th:field="*{nickname}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Почта:
+                            </th>
+                            <td>
+                                <input type="text" th:field="*{email}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Пароль:
+                            </th>
+                            <td>
+                                <input type="text" th:field="*{password}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Повторите пароль:
+                            </th>
+                            <td>
+                                <input type="text" th:field="*{password1}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="999">
+                                <input type="submit" value="Регистраця">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

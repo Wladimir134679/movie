@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Профиль</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td>
+            <h2>Привет!</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>
+                Ваше ник: <span th:text="${userData.getNickname()}"></span>
+                <br>
+                Почта: <span th:text="${userData.getEmail()}"></span>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="block-details">
+                <details>
+                    <summary>Ваши комментарии</summary>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>
+                                    Фильм
+                                </th>
+                                <th>
+                                    Время
+                                </th>
+                                <th>
+                                    Текст
+                                </th>
+                            </tr>
+                            <tr th:each="data : ${commentList}">
+                                <td>
+                                    <span th:text="*{data.getMovie()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="*{data.getTime()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="*{data.getText()}"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </details>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="block-details">
+                <details>
+                    <summary>Оценки к фильмам</summary>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>
+                                    Фильм
+                                </th>
+                                <th>
+                                    Время
+                                </th>
+                                <th>
+                                    Ваша оценка
+                                </th>
+                                <th>
+                                    Средняя на фильм
+                                </th>
+                            </tr>
+                            <tr th:each="data : ${assessmentList}">
+                                <td>
+                                    <span th:text="*{data.getMovie()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="*{data.getTime()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="*{data.getUserAssessment()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="*{data.getMovieAssessment()}"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </details>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

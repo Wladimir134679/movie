@@ -1,0 +1,200 @@
+#main{
+    width: 75%;
+    border: 3px solid #7f7f7f;
+    background: #c3c3c3;
+    margin: 2px auto;
+
+}
+
+#main .name{
+    padding: 0;
+    margin: 0;
+}
+
+#main .name h2{
+    display: block;
+    text-align: center;
+    border-bottom: 1px double #9d0065;
+    background: #b9b9b9;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#main .description{
+    width: 90%;
+    background: #bfbfbf;
+    border: 1px double #7092be;
+    margin: 1px auto;
+    padding: 5px;
+}
+
+#main .comments{
+    width: 90%;
+    background: #bfbfbf;
+    border: 1px double #7092be;
+    margin: 1px auto;
+    padding: 0 5px;
+}
+
+#main .comments .title{
+    font-size: 17px;
+    border: 1px double #7f7f7f;
+    border-top: none;
+    background: #c8c8c8;
+    width: 95%;
+    margin: 0 auto;
+    padding: 3px 5px;
+}
+
+#main .comments .add{
+    width: 50%;
+    padding: 5px;
+    margin: 2px auto;
+    border: 1px double #7092be;
+}
+
+#main .comments .add p{
+    margin: 0;
+    padding: 2px 5px;
+}
+
+#main .comments .add{
+    display: block;
+    text-align: center;
+    /*border: 1px double white;*/
+}
+
+#main .comments .add .inputText input{
+    width: 99%;
+    margin: 2px auto;
+}
+
+#main .comments .add .but input{
+    width: 25%;
+    margin: 2px auto;
+}
+
+/*  Assessment */
+
+#assessment{
+    width: 90%;
+    background: #bfbfbf;
+    border: 1px double #7092be;
+    margin: 1px auto;
+    padding: 5px;
+}
+
+#assessment h2{
+    padding: 0;
+    margin: 0 auto;
+    background: #c8c8c8;
+    border: 1px double #9d0065;
+    border-top: none;
+
+}
+
+#assessment .data{
+    padding: 5px;
+    margin: 0;
+    display: block;
+}
+
+#assessment .data p {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px double black;
+}
+
+#assessment table{
+    width: 43%;
+    background: #c3c3c3;
+    border: 1px double #7092be;
+}
+
+
+#assessment table th{
+    text-align: center;
+    padding: 0 5px;
+}
+
+#assessment table td{
+    text-align: center;
+    padding: 3px 5px;
+}
+
+#assessment .button{
+    width: 90%;
+    margin: 0 auto;
+    /*border: 1px double #8182c7;*/
+    text-align: center;
+}
+
+#assessment .button a{
+    display: block;
+    padding: 2px 5px;
+    border: 2px double #b9b9b9;
+    text-decoration: none;
+    color: black;
+}
+
+#assessment .button a:hover{
+    background: #c8c8c8;
+}
+
+#assessment .assessButton{
+    display: block;
+    border: 1px double #5557b8;
+    text-align: center;
+    margin: 1px;
+    padding: 4px;
+}
+
+#assessment .assessButton a{
+    width: 100%;
+    color: black;
+    padding: 2px 5px;
+    text-decoration: none;
+    background: #b9b9b9;
+    border: 1px double #9d0065;
+}
+
+#assessment .assessButton a.lis{
+    background: #fff62f;
+}
+
+#assessment .assessButton a:hover{
+    background: #7f7f7f;
+}
+
+/*  COMMENTS  */
+
+#body-comments{
+    width: 95%;
+    border: 2px double #7092be;
+    padding: 0;
+    margin: 0 auto;
+    background: #c3c3c3;
+}
+
+#body-comments .body{
+    background: #bfbfbf;
+    display: block;
+    border-bottom: 1px double #9d0065;
+    padding: 5px;
+    margin: 4px auto;
+}
+
+#body-comments .body .author{
+    display: block;
+    border-bottom: 1px double #5557b8;
+    margin: 0;
+    padding: 2px 0;
+}
+
+#body-comments .body .text{
+    display: block;
+    margin: 0;
+    padding: 3px;
+    border: 2px double #7f7f7f;
+    background: #b9b9b9;
+}

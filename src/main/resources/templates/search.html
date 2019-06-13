@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Поиск</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td colspan="99">
+            <form method="GET" th:action="@{/search}">
+                <div id="search-bar">
+                    <input type="text" name="s" th:value="${str} != null ? ${str} : ''">
+                    <input type="submit" value="Поиск">
+                </div>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p th:if="${moviesList} != null">Найдено: <span th:text="${moviesList.size()}"></span></p>
+            <div th:if="${moviesList} != null" th:insert="index :: #list-table">
+
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Пользователи</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td>
+            <h2>Пользователи сайта</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="users">
+                <table cellspacing="0">
+                    <tr>
+                        <th>
+                            Ник
+                        </th>
+                        <th>
+                            Колличество комментариев
+                        </th>
+                        <th>
+                            Колличество оценок
+                        </th>
+                    </tr>
+                    <tr th:each="data, stat : ${userListData}">
+                        <td th:class="${stat.last} ? 'end' : ''">
+                            <span th:text="*{data.getNickname()}"></span>
+                        </td>
+                        <td th:class="${stat.last} ? 'end' : ''">
+                            <span th:text="*{data.getNumComment()}"></span>
+                        </td>
+                        <td th:class="${stat.last} ? 'end' : ''">
+                            <span th:text="*{data.getNumAssessment()}"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

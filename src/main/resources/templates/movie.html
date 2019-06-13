@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${movieData.getName()}"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/movie.css}" href = "../static/css/movie.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<div id="main">
+    <div class="name">
+        <h2 th:text="${movieData.getName()}"></h2>
+    </div>
+    <div class="description">
+        <p th:text="${movieData.getDescription()}"></p>
+    </div>
+
+
+    <div id="assessment">
+        <h2>Рейтинг</h2>
+        <div class="data">
+            <p>Средняя оценка: <span th:text="${movieData.getAssessment()}"></span></p>
+        </div>
+        <table cellspacing="0">
+            <tr>
+                <th>
+                    Оценка
+                </th>
+                <th>
+                    Оценило человек
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    5
+                </td>
+                <td>
+                    <span th:text="${movieData.getAssessmentNum(5)}"></span>
+                </td>
+<!--                <td th:if="${headerUserData} != null">-->
+<!--                    <div class="button" th:if="${!movieData.isAssessmentUser()}">-->
+<!--                        <a th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=5'">Оценить</a>-->
+<!--                    </div>-->
+<!--                    <div class="button" th:if="${movieData.isAssessmentUser()} AND ${movieData.isAssessmentUser(5)}">-->
+<!--                        <a th:href="@{/movie/assessment/delete?id=}+${movieData.getId()}">Снять голос</a>-->
+<!--                    </div>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>
+                    4
+                </td>
+                <td>
+                    <span th:text="${movieData.getAssessmentNum(4)}"></span>
+                </td>
+<!--                <td th:if="${headerUserData} != null">-->
+<!--                    <div class="button" th:if="${!movieData.isAssessmentUser()}">-->
+<!--                        <a th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=4'">Оценить</a>-->
+<!--                    </div>-->
+<!--                    <div class="button" th:if="${movieData.isAssessmentUser()} AND ${movieData.isAssessmentUser(4)}">-->
+<!--                        <a th:href="@{/movie/assessment/delete?id=}+${movieData.getId()}">Снять голос</a>-->
+<!--                    </div>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    <span th:text="${movieData.getAssessmentNum(3)}"></span>
+                </td>
+<!--                <td th:if="${headerUserData} != null">-->
+<!--                    <div class="button" th:if="${!movieData.isAssessmentUser()}">-->
+<!--                        <a th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=3'">Оценить</a>-->
+<!--                    </div>-->
+<!--                    <div class="button" th:if="${movieData.isAssessmentUser()} AND ${movieData.isAssessmentUser(3)}">-->
+<!--                        <a th:href="@{/movie/assessment/delete?id=}+${movieData.getId()}">Снять голос</a>-->
+<!--                    </div>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    <span th:text="${movieData.getAssessmentNum(2)}"></span>
+                </td>
+<!--                <td th:if="${headerUserData} != null">-->
+<!--                    <div class="button" th:if="${!movieData.isAssessmentUser()}">-->
+<!--                        <a th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=2'">Оценить</a>-->
+<!--                    </div>-->
+<!--                    <div class="button" th:if="${movieData.isAssessmentUser()} AND ${movieData.isAssessmentUser(2)}">-->
+<!--                        <a th:href="@{/movie/assessment/delete?id=}+${movieData.getId()}">Снять голос</a>-->
+<!--                    </div>-->
+<!--                </td>-->
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    <span th:text="${movieData.getAssessmentNum(1)}"></span>
+                </td>
+<!--                <td th:if="${headerUserData} != null">-->
+<!--                    <div class="button" th:if="${!movieData.isAssessmentUser()}">-->
+<!--                        <a th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=1'">Оценить</a>-->
+<!--                    </div>-->
+<!--                    <div class="button" th:if="${movieData.isAssessmentUser()} AND ${movieData.isAssessmentUser(1)}">-->
+<!--                        <a th:href="@{/movie/assessment/delete?id=}+${movieData.getId()}">Снять голос</a>-->
+<!--                    </div>-->
+<!--                </td>-->
+            </tr>
+            <tr th:if="${headerUserData} != null">
+                <td colspan="99">
+                    <div>
+                        <p>Оценить:</p>
+                        <div class="assessButton">
+                            <a th:class="${movieData.isAssessmentUser(1)} ? 'lis' : ''" th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=1'">1</a>
+                            <a th:class="${movieData.isAssessmentUser(2)} ? 'lis' : ''" th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=2'">2</a>
+                            <a th:class="${movieData.isAssessmentUser(3)} ? 'lis' : ''" th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=3'">3</a>
+                            <a th:class="${movieData.isAssessmentUser(4)} ? 'lis' : ''" th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=4'">4</a>
+                            <a th:class="${movieData.isAssessmentUser(5)} ? 'lis' : ''" th:href="@{/movie/assessment?id=} + ${movieData.getId()} + '&as=5'">5</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="comments">
+        <p class="title">Комментарии (<span th:text="${commentsList.size()}"></span>)</p>
+        <div class="add" th:if="${headerUserData} != null">
+            <p>Добавить</p>
+            <form th:object="${addForm}" method="POST" th:action="@{/movie/add?id=} + ${movieData.getId()}">
+                <div class="inputText">
+                    <input type="text" th:field="*{text}">
+                </div>
+                <div class="but">
+                    <input type="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
+
+        <div id="body-comments">
+            <div th:if="${commentsList.size()} == 0">
+                <p>Нет комментариев!</p>
+            </div>
+            <th:block th:if="${commentsList.size()} != 0" th:each="data : ${commentsList}">
+                <div class="body">
+                    <div class="author">
+                        <span th:text="*{data.getAuthor()}"></span>
+                        (
+                        <span th:text="*{data.getTime()}"></span>
+                        )
+                    </div>
+                    <p class="text"    th:text="*{data.getText()}"></p>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

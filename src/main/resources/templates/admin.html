@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Редактор</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href = "../static/css/style.css"/>
+</head>
+<body>
+<div th:include="fragments :: header"></div>
+
+<table id="main-block">
+    <tr>
+        <td>
+            <h2>Редактирование фильмов</h2>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="left">
+                <b>Добавить фильм</b>
+                <form th:object="${movieForm}" th:action="@{/admin/movie/add}" method="POST">
+                    <table>
+                        <tr>
+                            <th>Название:</th>
+                            <td>
+                                <input type="text" th:field="*{name}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Описание:</th>
+                            <td>
+                                <input type="text" th:field="*{description}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="99">
+                                <input type="submit" value="Добавить">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="right">
+                <b>Удалить</b>
+                <table>
+                    <tr>
+                        <th>
+                            Название
+                        </th>
+                        <th>
+                            Описание
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                    <tr th:each="data : ${movieList}">
+                        <td>
+                            <span th:text="*{data.getName()}"></span>
+                        </td>
+                        <td>
+                            <span th:text="*{data.getDescription()}"></span>
+                        </td>
+                        <td>
+                            <div>
+                                <a th:href="@{/admin/movie/del?id=} + ${data.getId()}">Удалить</a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div th:include="fragments :: footer"></div>
+</body>
+</html>

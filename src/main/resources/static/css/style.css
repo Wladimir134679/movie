@@ -1,0 +1,339 @@
+
+
+body{
+    background: #5c5c5c;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*    GUI    */
+
+/*  MAIN_BLOCK Index.html  */
+
+#main-block{
+    margin: 2px auto;
+    width: 75%;
+    color: black;
+    border: 3px solid #7f7f7f;
+    background: #c3c3c3;
+}
+
+#main-block td{
+    padding: 5px;
+}
+
+#main-block td h1{
+    text-align: center;
+}
+
+#main-block h2{
+    text-align: center;
+}
+
+/*  Список фильмов на главной  */
+
+#list-table{
+    border: 1px double #7f7f7f;
+    background: #bfbfbf;
+    width: 97%;
+    margin: 5px auto;
+}
+
+#list-table .name{
+    text-align: center;
+    font-size: 17px;
+}
+
+#list-table .description{
+    margin: 5px 20px;
+    border-bottom: 1px double black;
+}
+
+#list-table .info{
+    margin: 5px 20px;
+    padding: 2px 5px;
+    border: 1px double #7f7f7f;
+    background: #c5c5c5;
+}
+
+#list-table .movie{
+    border: 2px double #95256C;
+    background: #c3c3c3;
+    color: black;
+    width: 95%;
+    padding: 5px;
+    margin: 5px auto;
+}
+
+/* UI */
+
+#list-table .button{
+    border: 2px double #7092be;
+    text-align: center;
+    width: 45%;
+    margin: 2px auto;
+}
+
+#list-table .button a{
+    display:block;
+    padding: 3px;
+    text-decoration: none;
+    color: black;
+    background: #c3c3c3;
+}
+
+#list-table .button a:hover{
+    background: #c8c8c8;
+}
+
+/*  AUTH FORM  */
+
+#auth{
+    margin: 2px auto;
+    width: 75%;
+    color: black;
+    border: 1px double #BFA930;
+    background: #999999;
+}
+
+#auth th{
+    text-align: center;
+    width: 25%;
+}
+
+#auth td{
+    text-align: center;
+}
+
+#auth input[type="text"]{
+    color: black;
+    width: 50%;
+}
+
+
+/*    HEADER    */
+
+#header{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #b9b9b9;
+}
+
+#header td{
+    width: 20%;
+    text-align: center;
+}
+
+#header .button{
+    display: block;
+}
+
+#header .button a{
+    display: block;
+    padding: 5px;
+    color: black;
+    border-bottom: 2px double #9d0065;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+#header .button a:hover{
+    background: #bfbfbf;
+    border: 1px double #9d0065;
+}
+
+/*  ВЫПАДАЮЩИЕ МЕНЮ  */
+
+#header .button ul{
+    display: none;
+    position: absolute;
+
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+#header .button ul li{
+    min-width:200px;
+    float:none;
+    display:list-item;
+    position: relative;
+    background: #b9b9b9;
+}
+
+#header .button:hover > ul{
+    display: inherit;
+}
+
+/*    FOOTER    */
+
+#footer{
+    margin: 5px auto;
+    width: 99%;
+    border-top: 2px double #9d0065;
+    background: #b9b9b9;
+    color: black;
+    padding: 5px;
+}
+
+#footer a{
+    color: black;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    color: #444444;
+    text-decoration: underline;
+}
+
+/*  SEARCH  */
+
+#search-bar{
+    display: block;
+    margin: 5px auto;
+    padding: 2px;
+    border: 1px solid #5557b8;
+    text-align: center;
+}
+
+#search-bar input[type="text"]{
+    width: 89%;
+    margin: 0;
+    border: 1px solid #5c5c5c;
+}
+
+#search-bar input[type="submit"]{
+    width: 9%;
+    margin: 0;
+    border: 1px solid #5c5c5c;
+}
+
+/* ALL MOVIES */
+
+.pages{
+    display: block;
+    border: 1px solid #5557b8;
+    margin: 3px auto;
+    padding: 4px;
+}
+
+.pages a{
+    width: 100%;
+    color: black;
+    padding: 2px 5px;
+    text-decoration: none;
+    background: #b9b9b9;
+    border: 1px double #9d0065;
+    margin: 1px 4px;
+}
+
+.pages a.lis{
+    background: #a3abca;
+}
+
+.pages a:hover{
+    background: #bfbfbf;
+}
+
+/*  USERS  */
+
+#users{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#users table{
+    width: 85%;
+    border: 1px double #5557b8;
+    margin: 0 auto;
+}
+
+#users table th{
+    text-align: left;
+    width: 33%;
+    padding: 2px 5px;
+    background: #c8c8c8;
+}
+
+#users table td{
+    text-align: left;
+    padding: 2px 5px;
+    border-bottom: 1px double #9d0065;
+}
+
+#users table td.end{
+    border-bottom: none;
+}
+
+/*  REGISTRATION  */
+
+#reg table{
+    width: 85%;
+    border: 1px double #5557b8;
+    margin: 0 auto;
+}
+
+#reg table th{
+    text-align: left;
+    width: 25%;
+    padding: 2px 5px;
+}
+
+#reg table td{
+    text-align: left;
+    padding: 2px 5px;
+}
+
+/*  PROFILE USER  */
+
+#block-details{
+    display: block;
+    margin: 5px auto;
+    padding: 0;
+}
+
+#block-details summary{
+    cursor: pointer;
+    border-bottom: 1px double #5557b8;
+    padding: 2px 5px;
+}
+
+#block-details details{
+    border: 1px double #5557b8;
+}
+
+#block-details table{
+    width: 75%;
+    margin: 2px auto;
+    text-align: left;
+}
+
+/*  ADMIN PANEL LEFT  */
+#left{
+    width: 46%;
+    border: 1px solid #5557b8;
+    margin: 2px auto;
+    float: left;
+}
+
+#left table{
+    display: block;
+    border: 1px solid #9d0065;
+}
+
+/*  ADMIN PANEL RIGHT  */
+#right{
+    width: 46%;
+    border: 1px solid #5557b8;
+    margin: 2px auto;
+    float: right;
+}
+
+#right table{
+    display: block;
+    border: 1px solid #9d0065;
+}

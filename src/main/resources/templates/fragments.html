@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Фрагменты</title>
+</head>
+<body>
+    <div th:fragment="header" th:object="${header}">
+        <table id="header" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div class="button">
+                        <a th:href="@{/index}">Главная</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="button">
+                        <a th:href="@{/search}">Поиск</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="button">
+                        <a th:href="@{/movies}">Фильмы</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="button">
+                        <a th:href="@{/users}">Пользователи</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="button">
+                        <a href="#">
+                            Профиль <span th:if="${headerUserData} != null" th:text="${headerUserData.getNickname()}"></span>
+                        </a>
+                        <ul th:if="${headerUserData} != null">
+                            <li>
+                                <a th:href="@{/profile}">Профиль</a>
+                            </li>
+                            <li th:if="${headerUserData.isAdmin()}">
+                                <a th:href="@{/admin/movie}">Управление фильмами</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/profile/exit}">Выход</a>
+                            </li>
+                        </ul>
+                        <ul th:if="${headerUserData} == null">
+                            <li>
+                                <a th:href="@{/auth}">Вход</a>
+                            </li>
+                            <li>
+                                <a th:href="@{/reg}">Регистрация</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div th:fragment="footer">
+        <div id="footer">
+            <a th:href="@{/index}">Главная</a>
+            |
+            <a th:href="@{/index}">О сайте</a>
+            <br>
+            <a th:href="@{/server/com1}">Команда №1(Новый пользователь)</a>
+            |
+            <a th:href="@{/server/com2}">Команда №2(+11 фильмов)</a>
+        </div>
+    </div>
+</body>
+</html>
